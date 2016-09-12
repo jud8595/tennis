@@ -60,7 +60,7 @@ public class DeuceImpl implements State {
 		} else if (j1 > j2) {
 			return "advantage " + joueur1.getName();
 		} else {
-			return "advantage " + joueur1.getName();
+			return "advantage " + joueur2.getName();
 		}
 	}
 }
