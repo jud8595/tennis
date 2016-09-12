@@ -70,12 +70,22 @@ public class ScoreTest {
         Assert.assertTrue(score.getAllSets(j1).get(0).equals("7"));
         Assert.assertTrue(score.getAllSets(j2).get(0).equals("6"));
         
-        for (int i=0; i<72; i++) {
+        for (int i=0; i<70; i++) {
+        	score.increment(j2);
+        }
+        
+        for (int i=0; i<20; i++) {
+        	score.increment(j1);
+        }
+        
+        for (int i=0; i<8; i++) {
         	score.increment(j2);
         }
         
         Assert.assertTrue(score.isGameOver());
+        Assert.assertTrue(score.getWinner() == j2);
         
         System.out.println(score.getScore());
+        System.out.println("Winner is " + score.getWinner().getName());
     }
 }

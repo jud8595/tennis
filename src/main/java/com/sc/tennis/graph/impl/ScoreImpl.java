@@ -35,6 +35,17 @@ public class ScoreImpl implements Score {
 	public boolean isGameOver() {
 		return (state instanceof EndImpl);
 	}
+	
+	public Joueur getWinner() {
+		if (isGameOver()) {
+			if (Integer.parseInt(this.match.getScore(this.joueur1)) > Integer.parseInt(this.match.getScore(this.joueur2))) {
+				return this.joueur1;
+			} else {
+				return this.joueur2;
+			}
+		} 
+		throw new IllegalStateException("Game is not over");
+	}
 
 	public String getCurrentGame(Joueur joueur) {
 		return this.game.getScore(joueur);

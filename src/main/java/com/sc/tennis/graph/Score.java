@@ -10,6 +10,8 @@ public interface Score {
 	
 	public boolean isGameOver();
 	
+	public Joueur getWinner();
+	
 	public String getCurrentGame(Joueur joueur);
 	
 	public boolean isPlayingDeuce();
